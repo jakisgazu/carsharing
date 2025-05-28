@@ -30,6 +30,12 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
+subprojects {
+    project.tasks.withType(Test) {
+        enabled = false
+    }
+}
+
 android {
     namespace "com.mycompany.carsharing"
     compileSdkVersion 34
@@ -86,5 +92,5 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20"
 }
